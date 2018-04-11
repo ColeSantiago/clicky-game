@@ -20,13 +20,30 @@ class App extends Component {
     }
   };
 
-  updateState = clicked => {
-    // this.setState({ 
-    //   characters
-    // });
-   
-    this.Shuffle(characters);
-    this.setState({ characters });
+  updateState = id => {
+    const Batman = this.state.characters.find(character => character.id === id);
+    if(Batman.clicked === false) {
+      Batman.clicked = true;
+      this.Shuffle(characters);
+      
+      this.setState({ characters });
+      this.setState({ navMessage: "Great! Keep Going!" });
+      this.setState({ currentScore: this.state.currentScore + 1});
+      console.log('keep going');
+      console.log(this.state.currentScore);
+
+    } else {
+      const characters = this.state.characters
+      for (let i = 0; i < characters.length; i++) {
+        characters[i].clicked = false
+      };
+
+      this.setState({ characters });
+      this.setState({ navMessage: "You've clicked that already! Game Over!" });
+      this.setState({ currentScore: 0});
+      console.log('game over');
+      console.log(this.state.currentScore);
+    }
     
   };
 
