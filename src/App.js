@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from "./components/Nav";
 import Header from "./components/Header";
 import GameArea from "./components/GameArea";
 import Footer from "./components/Footer";
@@ -25,31 +26,35 @@ class App extends Component {
     if(Batman.clicked === false) {
       Batman.clicked = true;
       this.Shuffle(characters);
-      
+
       this.setState({ characters });
       this.setState({ navMessage: "Great! Keep Going!" });
       this.setState({ currentScore: this.state.currentScore + 1});
-      console.log('keep going');
-      console.log(this.state.currentScore);
-
     } else {
       const characters = this.state.characters
       for (let i = 0; i < characters.length; i++) {
         characters[i].clicked = false
       };
 
+      if (this.state.currentScore > this.state.topScore){
+        this.setState({ topScore: this.state.currentScore });
+      };
+
       this.setState({ characters });
       this.setState({ navMessage: "You've clicked that already! Game Over!" });
       this.setState({ currentScore: 0});
-      console.log('game over');
-      console.log(this.state.currentScore);
-    }
+    };
     
   };
 
   render() {
     return (
       <div>
+        <Nav 
+          navMessage={this.state.navMessage}
+          currentScore={this.state.currentScore}
+          topScore={this.state.topScore}
+        />
         {this.state.characters.map(character => (
           <GameArea
             updateState={this.updateState}
