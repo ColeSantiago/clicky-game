@@ -7,10 +7,10 @@ import './App.css';
 
 class App extends Component {
   state = {
-    characters,
+    characters: characters,
     currentScore: 0,
     topScore: 0,
-    notClickedYet: characters,
+    navMessage: "Click a Batman to Begin!"
   };
 
   Shuffle = array => {
@@ -20,11 +20,14 @@ class App extends Component {
     }
   };
 
-    updateState = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const batman = this.state.characters.find(character => character.clicked === clicked);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+  updateState = clicked => {
+    // this.setState({ 
+    //   characters
+    // });
+   
+    this.Shuffle(characters);
+    this.setState({ characters });
+    
   };
 
   render() {
@@ -37,6 +40,7 @@ class App extends Component {
             key={character.id}
             name={character.name}
             image={character.image}
+            clicked={character.clicked}
           />
         ))}
       </div>
