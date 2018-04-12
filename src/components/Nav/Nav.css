@@ -1,0 +1,26 @@
+nav {
+	background: #e8e820;
+	padding: 30px;
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+	box-shadow: 
+	0 14px 28px rgba(0,0,0,.25), 
+	0 10px 10px rgba(0,0,0,.22);
+}
+
+li {
+	display: inline-block;
+	text-align: center;
+	width: 33.3%;
+}
+
+.nav-title {
+	font-size: 20px;
+}
+
+.nav-message, .scores {
+	font-size: 30px;
+}
+
+

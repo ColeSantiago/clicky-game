@@ -55,6 +55,7 @@ class App extends Component {
           currentScore={this.state.currentScore}
           topScore={this.state.topScore}
         />
+        <Header />
         {this.state.characters.map(character => (
           <GameArea
             updateState={this.updateState}
@@ -65,6 +66,7 @@ class App extends Component {
             clicked={character.clicked}
           />
         ))}
+        <Footer />
       </div>
     );
   }
