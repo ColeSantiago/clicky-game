@@ -3,8 +3,10 @@ import "./Footer.css";
 
 const Footer = props => (
 	<footer>
-		<div>Clicky Game</div>
-		<a href="https://github.com/ColeSantiago/clicky-game" target="_blank" rel="noopener noreferrer">GitHub</a>
+		<ul>
+			<li><div>Clicky Game</div></li>
+			<li><a href="https://github.com/ColeSantiago/clicky-game" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+		</ul>
 	</footer>
 );
 

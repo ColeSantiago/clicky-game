@@ -1,0 +1,10 @@
+footer {
+	display: inline-block;
+	width: 100%;
+	background: #e8e820;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	font-size: 15px;
+}
+

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from "./components/Nav";
 import Header from "./components/Header";
+import Wrapper from "./components/Wrapper";
 import GameArea from "./components/GameArea";
 import Footer from "./components/Footer";
 import characters from "./characters.json";
@@ -56,16 +57,18 @@ class App extends Component {
           topScore={this.state.topScore}
         />
         <Header />
-        {this.state.characters.map(character => (
-          <GameArea
-            updateState={this.updateState}
-            id={character.id}
-            key={character.id}
-            name={character.name}
-            image={character.image}
-            clicked={character.clicked}
-          />
-        ))}
+        <Wrapper>
+          {this.state.characters.map(character => (
+            <GameArea
+              updateState={this.updateState}
+              id={character.id}
+              key={character.id}
+              name={character.name}
+              image={character.image}
+              clicked={character.clicked}
+            />
+          ))}
+        </Wrapper>
         <Footer />
       </div>
     );
