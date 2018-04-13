@@ -12,4 +12,4 @@ If a picture is clicked more then once in the same game the game will end and th
 
 The game restarts by just clicking another picture.
 
-Try it out [here.]()
+Try it out [here.](https://memory-click-game.herokuapp.com/)
