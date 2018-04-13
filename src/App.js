@@ -22,15 +22,33 @@ class App extends Component {
     }
   };
 
+  checkWin = score => {
+    if (score === 11) {
+      const characters = this.state.characters
+      for (let i = 0; i < characters.length; i++) {
+        characters[i].clicked = false
+      };
+
+      if (this.state.currentScore > this.state.topScore){
+        this.setState({ topScore: this.state.currentScore + 1 });
+      };
+      this.setState({ characters: this.state.characters });
+      this.setState({ navMessage: " Great! You clicked them all! Keep clicking to start again!" });
+      this.setState({ currentScore: 0});
+    }
+  };
+
   updateState = id => {
     const Batman = this.state.characters.find(character => character.id === id);
     if(Batman.clicked === false) {
+      console.log(this.state.currentScore);
       Batman.clicked = true;
       this.Shuffle(characters);
 
       this.setState({ characters });
       this.setState({ navMessage: "Great! Keep Going!" });
       this.setState({ currentScore: this.state.currentScore + 1});
+      this.checkWin(this.state.currentScore);
     } else {
       const characters = this.state.characters
       for (let i = 0; i < characters.length; i++) {
@@ -40,12 +58,11 @@ class App extends Component {
       if (this.state.currentScore > this.state.topScore){
         this.setState({ topScore: this.state.currentScore });
       };
-
+      
       this.setState({ characters });
       this.setState({ navMessage: "You've clicked that already! Game Over!" });
       this.setState({ currentScore: 0});
-    };
-    
+    };  
   };
 
   render() {
