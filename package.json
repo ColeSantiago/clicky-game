@@ -2,6 +2,10 @@
   "name": "clicky-game",
   "version": "0.1.0",
   "private": true,
+  "root": "dist/",
+  "routes": {
+    "/**": "index.html"
+  },
   "homepage": "https://colesantiago.github.io/clicky-game/",
   "dependencies": {
     "gh-pages": "^1.1.0",
