@@ -1,10 +1,10 @@
 # clicky-game
 
-This is a memmory app built with ReactJs.
+## This is a memory app built with ReactJs.
 
 ![app photo 1](https://raw.githubusercontent.com/ColeSantiago/clicky-game/master/src/readme.png)
 
-** The object of the game is not click all of the pictures without clicking one twice. **
+**The object of the game is not click all of the pictures without clicking one twice.**
 
 Each time one is clicked the user's score will increment by one.
 
