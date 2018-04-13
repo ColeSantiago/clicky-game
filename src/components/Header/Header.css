@@ -3,10 +3,11 @@ header {
     font-family: 'Squada One', cursive;
     color: #e8e820;
     text-shadow: 
-    -1px -1px 0 #000, 
-    1px -1px 0 #000, 
-    -1px 1px 0 #000, 
-    1px 1px 0 #000;
+    -1px -1px 0 #525151, 
+    1px -1px 0 #525151, 
+    -1px 1px 0 #525151, 
+    1px 1px 0 #525151;
+    background: black;
 }
 
 .header-img {
@@ -23,11 +24,33 @@ header {
     transform: translate(-50%, -50%);
     font-size: 70px;
     line-height: 60px;
-    background: white;
+    background: black;
     padding: 10px;
     border-radius: 10px;
 }
 
 .directions {
 	font-size: 40px;
+}
+
+@media only screen and (max-width: 794px) {
+    .photo-child {
+        line-height: 50px;
+        top: 66%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .photo-child {
+        line-height: 30px;
+        top: 66%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+   .directions {
+    font-size: 20px;
+   }
 }

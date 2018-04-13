@@ -2,7 +2,15 @@
 .wrapper {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1259px;
     justify-content: center;
     margin: 0 auto;
-    padding: 50px;
+    padding: 70px;
+    padding-top: 10px;
+}
+
+@media only screen and (max-width: 640px) {
+	.wrapper {
+		width: auto;
+	}
 }
